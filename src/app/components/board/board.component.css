@@ -1,0 +1,65 @@
+.centerOfScreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -275px;
+    margin-left: -275px;
+}
+
+.board-background {
+    width: 550px;
+    height: 550px;
+    background-color: #666262;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    grid-auto-rows: minmax(173.2px, auto);
+}
+.one-one {
+    background-color: rgb(27, 27, 26);
+    grid-column: 1;
+    grid-row: 1;
+}
+.one-two {
+    background-color: rgb(27, 27, 26);
+    grid-column: 2;
+    grid-row: 1;
+}
+.one-three {
+    background-color: rgb(27, 27, 26);
+    grid-column: 3;
+    grid-row: 1;
+}
+.two-one {
+    background-color: rgb(27, 27, 26);
+    grid-column: 1;
+    grid-row: 2;
+}
+.two-two {
+    background-color: rgb(27, 27, 26);
+    grid-column: 2;
+    grid-row: 2;
+}
+.two-three {
+    background-color: rgb(27, 27, 26);
+    grid-column: 3;
+    grid-row: 2;
+}
+.three-one {
+    background-color: rgb(27, 27, 26);
+    grid-column: 1;
+    grid-row: 3;
+}
+.three-two {
+    background-color: rgb(27, 27, 26);
+    grid-column: 2;
+    grid-row: 3;
+}
+.three-three {
+    background-color: rgb(27, 27, 26);
+    grid-column: 3;
+    grid-row: 3;
+}
