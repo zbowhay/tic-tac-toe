@@ -39,14 +39,20 @@ h1, h2, h3, h4 {
 .title {
   grid-area: title;
   font-size: 5vmin;
-  /* background-color: paleturquoise; */
+  color: #101252;
   text-align: center;
   margin: auto;
 }
 
+/* #eeeeee light gray */
+/* #101252 dark blue*/
+/* #f34646 red */
+
 .board-container {
   grid-area: board;
-  background-color: rgb(0, 0, 0);
+  background-color: #101252;
+  border: #101252 10px solid;
+  border-radius: 10px;
 }
 
 .board {
@@ -64,5 +70,13 @@ h1, h2, h3, h4 {
 }
 
 .mark-container {
-  background-color: rgb(58, 58, 58);
+  background-color: #eee;
+}
+
+.mark-container:hover {
+  border: 5px solid rgba(0, 140, 255, 0.5)
+}
+
+.mark {
+
 }
