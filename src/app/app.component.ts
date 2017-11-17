@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
-import { BoardComponent } from './components/board/board.component';
+// import { DarkSkyWeatherService } from './services/index';
 
 @Component({
-  selector: 'app-root',
+  selector: 'my-app', // tslint:disable-line
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: [ './app.component.css' ]
 })
 export class AppComponent {
-  title = 'Tic Tac Toe';
+  public title: String;
+
+  constructor() {
+    this.setTitle('Welcome to Tic-Tac-Toe!');
+  }
+
+  setTitle(str: String) {
+    this.title = str;
+  }
 }

@@ -1,19 +1,21 @@
+/* Modules */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
+/* Components */
 import { AppComponent } from './app.component';
-import { BoardComponent, MarkerComponent } from './components/index';
+/* Services */
+// import { DarkSkyWeatherService } from './services/index';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BoardComponent,
-    MarkerComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ /* DarkSkyWeatherService */ ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
