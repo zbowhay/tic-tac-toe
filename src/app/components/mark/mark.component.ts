@@ -7,14 +7,25 @@ import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from
 })
 export class MarkComponent implements OnChanges {
   @Input() xTurn: boolean;
-  @Input() boardIndex: Number;
+  @Input() boardIndex: number;
   @Output() markPlaced = new EventEmitter();
-  public show: Boolean = false;
+  private show = false;
+  private unmarked = true;
+  private markAsX: boolean;
 
   constructor() { }
 
   ngOnChanges(change: SimpleChanges) {
-    this.xTurn = typeof change['xTurn'] !== 'undefined' ? change['xTurn'].currentValue : this.xTurn;
+    if (this.unmarked) {
+      this.markAsX = typeof change['xTurn'] !== 'undefined' ? change['xTurn'].currentValue : this.xTurn;
+    }
+  }
+
+  onMarkPlaced(event) {
+    if (this.unmarked) {
+      this.unmarked = false;
+      this.markPlaced.emit(this.boardIndex);
+    }
   }
 
   hideMark(event) {
@@ -22,12 +33,7 @@ export class MarkComponent implements OnChanges {
   }
 
   showMark(event) {
-    console.log(`Player X turn: ${this.xTurn}`);
     this.show = true;
   }
 
-  onMarkPlaced(event) {
-    console.log('mark placed!');
-    this.markPlaced.emit(this.boardIndex);
-  }
 }

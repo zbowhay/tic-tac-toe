@@ -4,7 +4,7 @@ import { Forecast } from '../models/index';
 
 @Injectable()
 export class GameService {
-  private playerXTurn: Boolean = true;
+  private playerXTurn = true;
   private maxTurns = 9;
   private currentTurn = 1;
   private boardState = [
@@ -19,7 +19,8 @@ export class GameService {
     return this.playerXTurn;
   }
 
-  public makeMove(boardIndex: Number) {
+  public makeMove(boardIndex: number) {
+    this.boardState[boardIndex] = this.playerXTurn ? 1 : -1;
     return this.endTurn();
   }
 
@@ -43,27 +44,21 @@ export class GameService {
     }
   }
 
-  private playerWon(): Boolean {
+  private playerWon(): boolean {
     // impossible for a player to win in less than 5 turns
     if (this.currentTurn < 5) {
       return false;
     } else {
-      const possibleVictoryLines = this.gatherAllLineTotals();
+      const lineSums = this.gatherAllLineTotals();
       // if any of the sums = 3 or -3 then either playerX or playerO won respectively
-      possibleVictoryLines.forEach((lineSum) => {
-        if (lineSum === 3 || lineSum === -3) {
-          return true;
-        }
-      });
-      return false;
+      return lineSums.includes(3) ? true : lineSums.includes(-3) ? true : false;
     }
   }
 
   private gatherAllLineTotals(): Number[] {
     const lineTotals = [];
     for (const key in Line) {
-      if (Line.hasOwnProperty(key)) {
-        console.log(this.sumLine(Line[key.toString()]));
+      if (Line.hasOwnProperty(key) && isNaN(Number(key))) {
         lineTotals.push(this.sumLine(Line[key.toString()]));
       }
     }
@@ -74,7 +69,7 @@ export class GameService {
     const b = this.boardState;
     switch (line) {
       case Line.diagDown:
-        return b[0] + b[3] + b[8];
+        return b[0] + b[4] + b[8];
       case Line.diagUp:
         return b[6] + b[4] + b[2];
       case Line.horTop:

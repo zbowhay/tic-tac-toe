@@ -7,8 +7,8 @@ import { GameService, GameCondition } from './services/index';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent {
-  public title: String;
-  public playerXTurn: Boolean;
+  public title: string;
+  public playerXTurn: boolean;
   public boardSize = 9;
 
   constructor(private _gameService: GameService) {
@@ -16,20 +16,19 @@ export class AppComponent {
     this.getPlayerTurn();
   }
 
-  setTitle(str: String) {
+  setTitle(str: string) {
     this.title = str;
   }
 
   getPlayerTurn() {
     this.playerXTurn = this._gameService.isPlayerXTurn();
-    console.log('changing turns');
   }
 
-  makeMove(boardIndex: Number) {
+  makeMove(boardIndex: number) {
     console.log('making move');
     const gameState: GameCondition = this._gameService.makeMove(boardIndex);
-    console.log(gameState);
-    if (gameState == GameCondition.won) {
+    console.log(`gameState: ${gameState}`);
+    if (gameState === GameCondition.won) {
       const message = this.playerXTurn ? 'Player X won!' : 'Player O won!';
       console.log(message);
       alert(message);

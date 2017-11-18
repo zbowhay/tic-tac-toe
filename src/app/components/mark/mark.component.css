@@ -3,21 +3,16 @@
   width: 100%;
 }
 
-.x {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: green;
-}
-
 .scale-size {
   font-size: 15vmin;
+  width: 100%;
+  height: 100%;
 }
 
 .no-show {
   color: transparent;
 }
 
-.fa-circle-o {
+/* .fa-circle-o {
   padding-top: 7px;
-}
+} */
