@@ -9,10 +9,17 @@
   height: 100%;
 }
 
+.fa-circle-o {
+  padding-top: 7px;
+  color: crimson;
+}
+
+.fa-times {
+  padding-top: 2px;
+  color: cornflowerblue;
+}
+
 .no-show {
   color: transparent;
 }
 
-.fa-circle-o {
-  padding-top: 7px;
-}

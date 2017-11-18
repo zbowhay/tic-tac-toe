@@ -39,7 +39,7 @@ h1, h2, h3, h4 {
 .title {
   grid-area: title;
   font-size: 5vmin;
-  color: #101252;
+  color: rgb(37, 34, 34);
   justify-self: center;
   align-self: center;
 }
@@ -51,8 +51,8 @@ h1, h2, h3, h4 {
 .board-container {
   grid-area: board;
   display: grid;
-  background-color: #101252;
-  border: #101252 1vmin solid;
+  background-color: rgb(37, 34, 34);
+  border: rgb(37, 34, 34) 1vmin solid;
   border-radius: 1vmin;
 
 

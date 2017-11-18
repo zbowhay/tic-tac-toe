@@ -10,7 +10,7 @@ module.exports = {
   devtool: isProd ? 'source-map' : 'inline-source-map',
   entry: {
     main: './src/main.ts',
-    pollyfills: './src/polyfills.ts',
+    polyfills: './src/polyfills.ts',
     vendor: './src/vendor.ts'
   },
   output: {
@@ -61,9 +61,6 @@ module.exports = {
       helpers.root('./src'), // location of your src
       {} // a map of your routes
     ),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['app', 'vendor', 'polyfills']
-    }),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
