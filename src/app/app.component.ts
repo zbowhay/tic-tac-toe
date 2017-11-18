@@ -10,6 +10,7 @@ export class AppComponent {
   public title: string;
   public playerXTurn: boolean;
   public boardSize = 9;
+  public alertMessage: string;
 
   constructor(private _gameService: GameService) {
     this.setTitle('Welcome to Tic-Tac-Toe!');
@@ -25,17 +26,23 @@ export class AppComponent {
   }
 
   makeMove(boardIndex: number) {
-    console.log('making move');
     const gameState: GameCondition = this._gameService.makeMove(boardIndex);
-    console.log(`gameState: ${gameState}`);
-    if (gameState === GameCondition.won) {
-      const message = this.playerXTurn ? 'Player X won!' : 'Player O won!';
-      console.log(message);
-      alert(message);
-    } else if (gameState === GameCondition.tie) {
-      alert(`It's a tie!`);
+    if (gameState !== GameCondition.continue) {
+      let message = '';
+      if (gameState === GameCondition.won) {
+        message = this.playerXTurn ? 'Player X won!' : 'Player O won!';
+      } else { // must be a tie
+        message = `It's a tie!`;
+      }
+      this.showAlert(message);
     } else {
       this.getPlayerTurn();
     }
+  }
+
+  showAlert(msg: string) {
+    const message = `${msg}\nWould you like to play again?`;
+    const doNothing = () => {};
+    confirm(message) ? window.location.reload() : doNothing();
   }
 }

@@ -1,6 +1,5 @@
 <div class="fill-space" (mouseenter)="showMark()" 
-(mouseleave)="hideMark()" (click)="onMarkPlaced()"
-[class.fa-times]="markAsX" [class.fa-circle-o]="!markAsX" class="fa scale-size" [class.no-show]="!show && unmarked">
-    <!-- <span *ngIf="markAsX" class="fa fa-times scale-size" [class.no-show]="!show && unmarked"></span> -->
-    <!-- <span *ngIf="!markAsX" class="fa fa-circle-o scale-size" [class.no-show]="!show && unmarked"></span> -->
+(mouseleave)="hideMark()" (click)="onMarkPlaced()">
+  <i *ngIf="markAsX" class="fa fa-times scale-size" [class.no-show]="!show && unmarked"></i>
+  <i *ngIf="!markAsX" class="fa fa-circle-o scale-size" [class.no-show]="!show && unmarked"></i>
 </div>
