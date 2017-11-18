@@ -1,2 +1,2 @@
-export { DarkSkyWeatherService } from './dark-sky-weather.service';
+export { GameService, GameCondition } from './game.service';
 // or export * from 'something';

@@ -4,15 +4,10 @@
   </div>
   <div class="board-container">
     <div class="board">
-      <div class="mark-container"></div>
-      <div class="mark-container"></div>
-      <div class="mark-container"></div>
-      <div class="mark-container"></div>
-      <div class="mark-container"></div>
-      <div class="mark-container"></div>
-      <div class="mark-container"></div>
-      <div class="mark-container"></div>
-      <div class="mark-container"></div>
+      <mark-area class="mark-container" *ngFor="let i of boardSize|iterable"
+        [xTurn]="playerXTurn" [boardIndex]="i" (markPlaced)="makeMove($event)">
+        {{i}}
+      </mark-area>
     </div>
   </div>
 </div>

@@ -42,6 +42,8 @@ h1, h2, h3, h4 {
   color: #101252;
   text-align: center;
   margin: auto;
+  justify-items: center;
+  align-items: center;
 }
 
 /* #eeeeee light gray */
@@ -51,13 +53,13 @@ h1, h2, h3, h4 {
 .board-container {
   grid-area: board;
   background-color: #101252;
-  border: #101252 10px solid;
-  border-radius: 10px;
+  border: #101252 1vmin solid;
+  border-radius: 1vmin;
 }
 
 .board {
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 1vmin;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   width: 100%;
@@ -71,12 +73,10 @@ h1, h2, h3, h4 {
 
 .mark-container {
   background-color: #eee;
+  border: .5vmin solid transparent;
+  text-align: center;
 }
 
 .mark-container:hover {
-  border: 5px solid rgba(0, 140, 255, 0.5)
-}
-
-.mark {
-
+  border: .5vmin solid rgba(0, 140, 255, 0.5);
 }

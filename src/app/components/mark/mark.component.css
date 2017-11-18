@@ -1,0 +1,23 @@
+.fill-space {
+  height: 100%;
+  width: 100%;
+}
+
+.x {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: green;
+}
+
+.scale-size {
+  font-size: 15vmin;
+}
+
+.no-show {
+  color: transparent;
+}
+
+.fa-circle-o {
+  padding-top: 7px;
+}

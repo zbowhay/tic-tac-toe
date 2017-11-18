@@ -1,0 +1,5 @@
+<div class="fill-space" (mouseenter)="showMark()" 
+(mouseleave)="hideMark()" (click)="onMarkPlaced()">
+    <div *ngIf="(xTurn)" class="fa fa-times scale-size" [class.no-show]="!show"></div>
+    <div *ngIf="(!xTurn)" class="fa fa-circle-o scale-size" [class.no-show]="!show"></div>
+</div>
