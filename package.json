@@ -9,11 +9,11 @@
     "clean": "rimraf dist",
     "serve": "webpack-dev-server --hot --config webpack.dev.js",
     "start": "npm run build && node server.js",
-    "test": "npm run compile && npm run test:before && npm run test:nyan-cat",
+    "test": "npm run compile && npm run test:before && nyc npm run test:nyan-cat",
     "compile": "tsc",
     "test:before": "echo For detailed test output use 'npm run test:detailed'",
     "test:nyan-cat": "ava **/*.spec.js -v --tap | tap-nyan",
-    "test:detailed": "npm run compile && ava **/*.spec.js -v"
+    "test:detailed": "npm run compile && nyc ava **/*.spec.js -v"
   },
   "author": "Zachary Bowhay",
   "license": "ISC",
@@ -47,6 +47,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
     "html-webpack-plugin": "^2.30.1",
+    "nyc": "^11.3.0",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.19.0",
     "tap-nyan": "^1.1.0",
