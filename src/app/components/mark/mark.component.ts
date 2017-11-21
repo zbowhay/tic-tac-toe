@@ -9,9 +9,9 @@ export class MarkComponent implements OnChanges {
   @Input() xTurn: boolean;
   @Input() boardIndex: number;
   @Output() markPlaced = new EventEmitter();
-  private show = false;
-  private unmarked = true;
-  private markAsX: boolean;
+  protected show = false;
+  protected unmarked = true;
+  protected markAsX: boolean;
 
   constructor() { }
 

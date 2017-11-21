@@ -4,10 +4,10 @@ import { Forecast } from '../models/index';
 
 @Injectable()
 export class GameService {
-  private playerXTurn = true;
-  private maxTurns = 9;
-  private currentTurn = 1;
-  private boardState = [
+  protected playerXTurn = true;
+  protected maxTurns = 9;
+  protected currentTurn = 1;
+  protected boardState: number[] = [
     0, 0, 0,  // 0 is unmarked
     0, 0, 0,  // 1 is x
     0, 0, 0   // -1 is o
