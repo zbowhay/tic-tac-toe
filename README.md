@@ -2,6 +2,9 @@
 
 Simple Tic-Tac-Toe game made with my [Web App Boilerplate](https://github.com/zbowhay/web-app-boilerplate).
 
+
+<b>Live Demo:</b> <i>https://zbowhay.github.io/WebAppDev/tic-tac-toe.html</i>
+
 ### Features
  - Angular 5
  - Font-Awesome Icons for player moves
